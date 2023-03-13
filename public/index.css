@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f8fa;
+  font-family: "Inter", sans-serif;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+header {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  height: 90px;
+  position: sticky;
+  top: 0;
+  padding: 1em 13vw 1em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+#dormroom-logo {
+  height: 50px;
+}
+
+#search-bar {
+  background-color: #f5f8fa;
+  border: 1px solid #b0b0b0;
+  border-radius: 5px;
+  height: 40px;
+  width: 50vw;
+  padding: 1em;
+  margin-left: 3.5em;
+}
+
+#post-btn {
+  box-sizing: border-box;
+  background-color: #faefed;
+  color: #d0634f;
+  border: 1px solid #d0634f;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  padding: 0;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#post-btn:hover {
+  background-color: #f4ddd9;
+}
+
+#main-container {
+  display: flex;
+  padding: 30px 5em 1em 2em;
+  justify-content: space-between;
+}
+
+#nav-bar {
+  width: 15vw;
+  margin-right: 3.5em;
+}
+
+#nav-bar ul {
+  background-color: #ffffff;
+  border-radius: 8px;
+  position: sticky;
+  top: 120px;
+}
+
+#nav-bar li {
+  display: block;
+  cursor: pointer;
+  height: 3.5em;
+  text-align: left;
+  line-height: 3.5em;
+  padding-left: 3em;
+  color: #b0b0b0;
+}
+
+#nav-bar li:hover {
+  color: #d0634f;
+  background-color: #faefed;
+}
+
+#posts-container {
+  margin-right: 3.5em;
+  width: 50vw;
+}
+
+.post {
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 2em;
+  padding-bottom: 1em;
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.post-title {
+  font-size: 30px;
+}
+
+.post > * > * {
+  margin-top: 0.5em;
+}
+
+.post-author-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.post-author-info > * {
+  margin-right: 1.5em;
+}
+
+.post-uni {
+  line-height: 1.5em;
+  background-color: #f5f8fa;
+  color: #696f79;
+  height: 1.5em;
+  padding: 0 1em;
+  border-radius: 25px;
+}
+
+.post-profile-icon {
+  height: 40px;
+}
+
+.post-profile-icon * {
+  height: 40px;
+}
+
+.post-content > h3 {
+  font-weight: normal;
+}
+
+.btn-container {
+  border-top: 1px solid #b0b0b0;
+  border-bottom: 1px solid #b0b0b0;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.comment-btn,
+.apply-btn {
+  height: 2em;
+  line-height: 2em;
+  margin: 0;
+  background-color: #f5f8fa;
+  color: #696f79;
+  width: 10em;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.comment-btn:hover,
+.apply-btn:hover {
+  background-color: #edeff0;
+}
+
+.comment-profile-icon {
+  height: 30px;
+}
+.comment-profile-icon > img {
+  height: 30px;
+}
+
+.comment-new {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0;
+}
+.comment-existing {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5em 0;
+}
+
+.comment-new * {
+  margin-right: 0.7em;
+}
+
+.comment-existing * {
+  margin-right: 0.7em;
+}
+
+.comment {
+  background-color: #f5f8fa;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+.comment-input {
+  background-color: #f5f8fa;
+  border-radius: 8px;
+  border: 0;
+  height: 30px;
+  padding-left: 15px;
+  width: 300px;
+}
+
+.send-btn {
+  cursor: pointer;
+  color: #d0634f;
+  font-size: 8;
+  font-weight: bold;
+}
+
+.send-btn:hover {
+  text-shadow: 0 0 1px #da8e80;
+}
+
+#profile-container {
+  border-radius: 8px;
+  background-color: #ffffff;
+  width: 15vw;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: sticky;
+  top: 120px;
+}
+
+#icon-and-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-name {
+  margin: 1em;
+  text-align: center;
+}
+
+#institution,
+#year-major {
+  line-height: 1.5em;
+  font-size: 16px;
+  text-align: left;
+}
+
+#year-major {
+  margin-top: 1em;
+}
+
+.hidden {
+  display: none;
+}
+
+.create-post-btn,
+.update-post-btn {
+  box-sizing: border-box;
+  background-color: #faefed;
+  color: #d0634f;
+  border: 1px solid #d0634f;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  padding: 0;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.post-entry {
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 2em;
+  padding-bottom: 1em;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.info-input {
+  background-color: #f5f8fa;
+  border-radius: 8px;
+  border: 0;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+#description {
+  height: 10em;
+  font-family: "Inter", sans-serif;
+  line-height: 1.3em;
+  padding: 1em;
+  width: 98%;
+}
+
+.fa-pen-to-square {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  font-size: 20px;
+  color: #d0634f;
+  cursor: pointer;
+}
+
+.fa-trash {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 20px;
+  color: #d0634f;
+  cursor: pointer;
+}
+
+.fa-pen-to-square:hover,
+.fa-trash:hover {
+  text-shadow: 0 0 1px #da8e80;
+}
+
+#dormroom-logo {
+  cursor: pointer;
+}
