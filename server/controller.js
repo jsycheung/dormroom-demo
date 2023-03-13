@@ -9,10 +9,12 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     },
   },
 });
+// manually setting the userId of the user viewing the page, for simplicity purposes
 const userId = 5;
 
 module.exports = {
   seed: (req, res) => {
+    // seeding the db
     sequelize
       .query(
         `
@@ -75,6 +77,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
   getPosts: (req, res) => {
+    // getting post information and author information from the db
     sequelize
       .query(
         `SELECT p.post_id, p.title, p.looking_for, p.location, p.vacancy, p.qualification, p.description, u.display_name, u.institution, u.user_id
@@ -86,6 +89,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
   getComments: (req, res) => {
+    // getting comment and author information from the db
     sequelize
       .query(
         `SELECT c.post_id, c.comment, u.display_name
@@ -97,6 +101,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
   getProfile: (req, res) => {
+    // getting profile information from the db
     sequelize
       .query(
         `
@@ -107,6 +112,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
   createComment: (req, res) => {
+    // get the comment from the frontend and insert into db
     let { postId, commentContent } = req.body;
     postId = parseInt(postId);
     sequelize
@@ -120,6 +126,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
   createPost: (req, res) => {
+    // get the post content from the frontend and insert into db
     let { title, looking_for, location, vacancy, qualification, description } =
       req.body;
     sequelize
@@ -133,6 +140,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
   deletePost: (req, res) => {
+    // get the post id from frontend and delete the post from the db
     let { id } = req.params;
     sequelize
       .query(`DELETE FROM posts WHERE posts.post_id = ${id};`)
@@ -140,6 +148,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
   editPost: (req, res) => {
+    // get the updated post content from frontend and update in db
     let {
       postId,
       title,
@@ -166,6 +175,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
   getAPost: (req, res) => {
+    // get the post id from frontend and query the specific post in db
     let { id } = req.params;
     postId = parseInt(id);
     sequelize

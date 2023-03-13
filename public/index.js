@@ -3,6 +3,7 @@ const userId = 5;
 const postBtn = document.querySelector("#post-btn");
 const logo = document.querySelector("#dormroom-logo");
 
+// helper function for selecting elements after they have appeared
 const isElementLoaded = async (selector) => {
   while (document.querySelector(selector) === null) {
     await new Promise((resolve) => requestAnimationFrame(resolve));
@@ -17,10 +18,12 @@ const isElementOneLoaded = async (selector) => {
   return document.querySelector(selector);
 };
 
+// toggling class .hidden for comment container
 function toggleClass(event) {
   event.target.parentNode.nextElementSibling.classList.toggle("hidden");
 }
 
+// get a list of comments from the backend, and make them display on their respective posts
 function getComments() {
   axios.get("http://localhost:5500/comments/").then((res) => {
     res.data.forEach((c) => {
@@ -39,6 +42,7 @@ function getComments() {
   });
 }
 
+// get user info from the backend and display them
 function getProfile() {
   axios.get("http://localhost:5500/profile/").then((res) => {
     r = res.data[0];
@@ -62,6 +66,7 @@ function getProfile() {
   });
 }
 
+// send the new comment data to backend and insert into the db
 function handleComment(event) {
   event.preventDefault();
 
@@ -85,6 +90,7 @@ function handleComment(event) {
   });
 }
 
+// fetch all the posts from the db and display it in frontend
 function getPosts() {
   postsContainer.innerHTML = "";
 
@@ -152,6 +158,7 @@ function getPosts() {
   });
 }
 
+// display the template for creating new post
 function displayEntry() {
   postsContainer.innerHTML = "";
   let entryPage = `
@@ -176,6 +183,7 @@ function displayEntry() {
   createPostBtn.addEventListener("click", createPost);
 }
 
+// getting the new post content from the template and insert into db
 function createPost() {
   let body = {
     title: document.querySelector("#title").value,
@@ -192,12 +200,14 @@ function createPost() {
   });
 }
 
+// creating new post
 function postAProject(event) {
   event.preventDefault();
   displayEntry();
   createPost();
 }
 
+// delete a post
 function deletePost(event) {
   event.preventDefault();
   let id = event.target.parentElement.id;
@@ -208,6 +218,7 @@ function deletePost(event) {
   });
 }
 
+// display template for editing post
 function displayEdit(postId) {
   postsContainer.innerHTML = "";
   let editPage = `
@@ -230,6 +241,7 @@ function displayEdit(postId) {
   postsContainer.innerHTML += editPage;
 }
 
+// display existing post content on the edit post template
 function editReq(postId) {
   axios
     .get(`http://localhost:5500/posts/${postId}`)
@@ -248,6 +260,7 @@ function editReq(postId) {
     .catch((err) => console.log(err));
 }
 
+// function for displaying edit post template and making sure existing post content show up on template for user's reference
 function editAPost(event) {
   event.preventDefault();
   let postId = event.target.parentElement.id;
@@ -256,6 +269,7 @@ function editAPost(event) {
   editReq(postId);
 }
 
+// updating the db with the edited post content
 function updatePost(event) {
   event.preventDefault();
   let postId = event.target.parentElement.id;
@@ -275,6 +289,7 @@ function updatePost(event) {
   });
 }
 
+// clicking on the logo will reload the page
 function reload(event) {
   event.preventDefault();
   getPosts();
