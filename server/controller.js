@@ -50,9 +50,9 @@ module.exports = {
         INSERT INTO users (display_name, institution, year, major)
         VALUES ('Jasmine Cheung', 'Massachusetts Institute of Technology', 'G1', 'Chemistry'),
         ('Jennifer Chan', 'The University of Hong Kong', '5', 'Speech and Hearing Sciences'),
-        ('Kathleen Li', 'Open University', '1', 'English Studies'),
+        ('Andy Li', 'Open University', '1', 'English Studies'),
         ('David Ng', 'California Institute of Technology', '3', 'Chemical Engineering'),
-        ('Tiffany Baker', 'The Hong Kong University of Science and Technology', '4', 'Finance'),
+        ('Alice Baker', 'The Hong Kong University of Science and Technology', '4', 'Finance'),
         ('Zach Zimmerman', 'Oxford University', '2', 'Computer Science'),
         ('Jason Wolf','Technical University of Munich', '3', 'Science Education');
         
